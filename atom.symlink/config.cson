@@ -1,0 +1,44 @@
+"*":
+  editor:
+    showIndentGuide: true
+    fontFamily: "Input"
+    preferredLineLength: 120
+    lineHeight: 1.6
+    autoIndentOnPaste: true
+    fontSize: 18
+    invisibles:
+      {}
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    confirmCheckoutHeadRevision: false
+  core:
+    themes: [
+      "seti-ui"
+      "seti-syntax"
+    ]
+    ignoredNames: [
+      ".bundle"
+      ".git"
+      "log"
+      "repositories"
+      "tmp"
+      "vendor"
+    ]
+    hideGitIgnoredFiles: true
+    disabledPackages: [
+      "background-tips"
+      "exception-reporting"
+      "metrics"
+    ]
+  "spell-check":
+    grammars: [
+      "text.plain"
+      "source.gfm"
+      "text.git-commit"
+    ]
+  welcome:
+    showOnStartup: false
+  "release-notes":
+    viewedVersion: "0.89.0"
+  minimap:
+    {}

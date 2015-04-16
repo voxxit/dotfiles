@@ -1,0 +1,21 @@
+# Usage: rubi <ruby version>
+#
+# Description: after downloading the latest ruby versions file,
+#   installs ruby with 4 processors without docs; defaults to latest stable
+#
+rubi () {
+  local version=$1
+  local update_url=https://raw.githubusercontent.com/postmodern/ruby-versions/master
+
+  if (( $+commands[gnproc] )); then
+    local procs=$(gnproc)
+  else
+    local procs=4 # just to be safe
+  fi
+
+  wget -qN \
+    --directory-prefix=/usr/local/share/ruby-install/ruby/ \
+    $update_url/ruby/{{versions,stable}.txt,checksums.{md5,sha1,sha256,sha512}}
+
+  ruby-install -j$procs --no-reinstall ruby $version -- --disable-install-rdoc
+}

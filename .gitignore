@@ -1,0 +1,12 @@
+.stfolder
+.stversions
+
+atom.symlink/.node-gyp
+atom.symlink/.storage
+atom.symlink/.apm
+atom.symlink/compile-cache/
+atom.symlink/packages
+atom.symlink/storage
+atom.symlink/themes
+
+git/gitconfig.symlink
