@@ -12,10 +12,6 @@
     softWrapAtPreferredLineLength: true
     confirmCheckoutHeadRevision: false
   core:
-    themes: [
-      "seti-ui"
-      "seti-syntax"
-    ]
     ignoredNames: [
       ".bundle"
       ".git"
