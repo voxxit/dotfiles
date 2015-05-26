@@ -5,7 +5,7 @@
     preferredLineLength: 120
     lineHeight: 1.6
     autoIndentOnPaste: true
-    fontSize: 18
+    fontSize: 19
     invisibles:
       {}
     softWrap: true

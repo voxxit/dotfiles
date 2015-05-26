@@ -13,4 +13,4 @@ if [ "$(docker-machine ls -q dev | wc -l)" -eq 0 ]; then
 fi
 
 # By default, associate the selected default machine
-eval $(docker-machine env)
+eval $(docker-machine env dev)
