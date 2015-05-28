@@ -38,3 +38,5 @@
     viewedVersion: "0.89.0"
   minimap:
     {}
+  "go-plus":
+    goPath: "/Users/jdelsman/go"
