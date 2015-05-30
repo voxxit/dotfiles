@@ -126,6 +126,10 @@ install_gems () {
   bundle check &>/dev/null || bundle install
 }
 
+install_deps () {
+  brew install `find -H ${DOTFILES_ROOT} -maxdepth 2 -name '_depends' | xargs cat | sort | uniq`
+}
+
 install_dotfiles () {
   info 'installing dotfiles'
 
@@ -140,5 +144,6 @@ install_dotfiles () {
 install_homebrew   # required
 install_zsh        # required
 install_gems       # required
+install_deps       # required
 setup_gitconfig
 install_dotfiles
