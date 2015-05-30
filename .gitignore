@@ -10,3 +10,7 @@ atom.symlink/storage
 atom.symlink/themes
 
 git/gitconfig.symlink
+
+
+vim/vim.symlink/**/*
+!vim/vim.symlink/autoload/

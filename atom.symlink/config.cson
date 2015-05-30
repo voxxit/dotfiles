@@ -5,12 +5,12 @@
     preferredLineLength: 120
     lineHeight: 1.6
     autoIndentOnPaste: true
-    fontSize: 19
     invisibles:
       {}
     softWrap: true
     softWrapAtPreferredLineLength: true
     confirmCheckoutHeadRevision: false
+    fontSize: 15
   core:
     ignoredNames: [
       ".bundle"
@@ -40,3 +40,9 @@
     {}
   "go-plus":
     goPath: "/Users/jdelsman/go"
+  linter:
+    {}
+  "atom-lint":
+    {}
+  "merge-conflicts":
+    gitPath: "/usr/local/bin/git"

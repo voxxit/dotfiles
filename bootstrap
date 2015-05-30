@@ -120,6 +120,12 @@ install_zsh () {
   which zsh || brew install zsh
 }
 
+install_gems () {
+  [ ! command -v gem &>/dev/null ] && (echo "Ruby is not installed" && exit 1)
+  ! command -v bundle && gem install bundler
+  bundle check &>/dev/null || bundle install
+}
+
 install_dotfiles () {
   info 'installing dotfiles'
 
@@ -133,5 +139,6 @@ install_dotfiles () {
 
 install_homebrew   # required
 install_zsh        # required
+install_gems       # required
 setup_gitconfig
 install_dotfiles

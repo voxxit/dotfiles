@@ -3,6 +3,3 @@ for font in $(ls $ZSH/fonts/input/*.ttf); do
 
   [ ! -f $name ] && cp -f $font $name
 done
-
-# fix lcd monitor font smoothing
-defaults -currentHost write -globalDomain AppleFontSmoothing -int 2
