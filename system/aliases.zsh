@@ -8,6 +8,9 @@ alias la='gls -A --color'
 
 alias t="tree"
 
+# find all instances broadcasting ssh over avahi
+alias localssh='dns-sd -B _ssh._tcp'
+
 # find the biggest file in the current dir
 alias biggest='ls -lah ./*(.OL[1])'
 

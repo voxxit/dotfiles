@@ -3,7 +3,7 @@
 # bootstraps the dotfiles directory
 set -e
 
-DOTFILES_ROOT=$(pwd)
+DOTFILES_ROOT="${HOME}/.files"
 
 info () {
   printf "  [ \033[00;34m..\033[0m ] $1"
@@ -113,17 +113,28 @@ link_file () {
 }
 
 install_homebrew () {
-  which brew || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  command -v brew &>/dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
 install_zsh () {
-  which zsh || brew install zsh
+  command -v zsh &>/dev/null || brew install zsh
 }
 
 install_gems () {
   [ ! command -v gem &>/dev/null ] && (echo "Ruby is not installed" && exit 1)
-  ! command -v bundle && gem install bundler
-  bundle check &>/dev/null || bundle install
+
+  if ! command -v bundle &>/dev/null; then
+    export GEM_HOME=~/.gems
+    export GEM_PATH=$GEM_HOME
+    export GEM_CACHE=$GEM_HOME/cache
+    export PATH=$PATH:$GEM_HOME/bin
+
+    gem install bundler --no-document
+  fi
+
+  pushd $DOTFILES_ROOT &>/dev/null
+    bundle check &>/dev/null || bundle install
+  popd &>/dev/null
 }
 
 install_deps () {
