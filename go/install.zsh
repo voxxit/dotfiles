@@ -9,10 +9,14 @@ if ! (( $+commands[go] )); then
     pushd go
       git checkout go$version
       pushd src
+        # make w/o test suite; use `./all.bash` if builds fail
         ./make.bash
 
         # ensure we load the path
         . $ZSH/go/path.zsh
+
+        # include all tools
+        go get golang.org/x/tools/cmd/...
       popd
     popd
   popd
