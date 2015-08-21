@@ -1,6 +1,6 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'showterm'
-gem 'bond'
-gem 'pry'
-gem 'engineyard'
+gem "showterm"
+gem "bond"
+gem "pry"
+gem "engineyard"

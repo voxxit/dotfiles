@@ -2,14 +2,14 @@
   editor:
     showIndentGuide: true
     fontFamily: "Input"
-    preferredLineLength: 120
-    lineHeight: 1.6
     autoIndentOnPaste: false
     invisibles: {}
     softWrap: true
     softWrapAtPreferredLineLength: true
     confirmCheckoutHeadRevision: false
-    fontSize: 15
+    preferredLineLength: 120
+    scrollPastEnd: true
+    fontSize: 18
   core:
     ignoredNames: [
       ".bundle"
@@ -25,6 +25,11 @@
       "exception-reporting"
       "metrics"
     ]
+    projectHome: "/Users/jdelsman/go/src/github.com"
+    themes: [
+      "nucleus-dark-ui"
+      "one-dark-syntax"
+    ]
   "spell-check":
     grammars: [
       "text.plain"
@@ -35,16 +40,17 @@
     showOnStartup: false
   "release-notes":
     viewedVersion: "0.89.0"
-  minimap:
-    {}
+  minimap: {}
   "go-plus":
     goPath: "~/go"
-  linter:
-    {}
-  "atom-lint":
-    {}
+    goInstallation: "/usr/local/go/bin/go"
+  linter: {}
+  "atom-lint": {}
   "merge-conflicts":
     gitPath: "/usr/local/bin/git"
   "atom-pair":
     pusher_app_key: "2afc34a3ac0f4a7a0eb6"
     pusher_app_secret: "b9db77f83a5db795c0cf"
+  "one-dark-ui":
+    layoutMode: "Compact"
+  "linter-rubocop": {}

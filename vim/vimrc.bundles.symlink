@@ -41,6 +41,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/tComment'
 Plug 'nsf/gocode'
 Plug 'scrooloose/nerdtree'
+Plug 'fatih/vim-go'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

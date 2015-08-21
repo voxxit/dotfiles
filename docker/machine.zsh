@@ -13,3 +13,5 @@ if [ "$(docker-machine ls -q dev | wc -l)" -eq 0 ]; then
 fi
 
 eval $(docker-machine env dev)
+
+export MACHINE_NATIVE_SSH=1
