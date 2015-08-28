@@ -27,8 +27,8 @@
     ]
     projectHome: "/Users/jdelsman/go/src/github.com"
     themes: [
-      "nucleus-dark-ui"
-      "one-dark-syntax"
+      "atom-dark-ui"
+      "polaris-syntax"
     ]
   "spell-check":
     grammars: [

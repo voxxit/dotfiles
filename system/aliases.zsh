@@ -22,3 +22,6 @@ alias topcpu="ps -eo %cpu,pid,comm | sort -k 1 -nr | head -10"
 
 # top 30 most used commands
 alias topcmd='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 30'
+
+# Engine Yard SSH aliases
+alias cron-perftest56="ey ssh -e perftest_56 --utilities=cron"
