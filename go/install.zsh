@@ -10,7 +10,7 @@ if ! (( $+commands[go] )); then
       git checkout go$version
       pushd src
         # make w/o test suite; use `./all.bash` if builds fail
-        ./make.bash
+        ./all.bash
 
         # ensure we load the path
         . $ZSH/go/path.zsh
