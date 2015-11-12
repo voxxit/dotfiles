@@ -1,10 +1,9 @@
 #!/usr/bin/ruby
 #
-# Put this on your $PATH (~/bin is recommended).
-#
 # Show churn for the files changed in the branch:
 #
-#   $ git-churn
+# USAGE:
+# $ git-churn
 #
 
 class GitChurn

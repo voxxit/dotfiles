@@ -1,7 +1,0 @@
-# Usage: ispinfo <ipv4 address>
-#
-# Description: Looks up ISP information for a given IP.
-#
-ispinfo () {
-  http http://0.0.0.0:5000/ip/$1
-}

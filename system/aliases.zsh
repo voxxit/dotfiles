@@ -22,9 +22,3 @@ alias topcpu="ps -eo %cpu,pid,comm | sort -k 1 -nr | head -10"
 
 # top 30 most used commands
 alias topcmd='print -l ${(o)history%% *} | uniq -c | sort -nr | head -n 30'
-
-alias startconsul="ssh -N -f -L 8500:localhost:8500 swarm1"
-
-alias cron-perftest="ey ssh -e hoteltonight_staging --utilities=cron"
-alias cron-staging="ey ssh -e hoteltonight_perftest_56 --utilities=cron"
-alias cron-prod="ey ssh -e hoteltonight_production_56 --utilities=cron"

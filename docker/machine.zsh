@@ -3,11 +3,10 @@ if [ "$(docker-machine ls -q dev | wc -l)" -eq 0 ]; then
 
   case $create in
     y|Y)
-      rm -rf ~/.docker/machine/cache/boot2docker.iso
       docker-machine create -d virtualbox \
-        --virtualbox-memory "4096" \
-        --virtualbox-cpu-count "-1" \
-        --virtualbox-disk-size "60000" \
+        --virtualbox-memory "8192" \
+        --virtualbox-cpu-count "$(gnproc)" \
+        --virtualbox-disk-size "131072" \
         dev
       ;;
   esac
