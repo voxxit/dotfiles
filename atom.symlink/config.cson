@@ -1,7 +1,6 @@
 "*":
   editor:
-    showIndentGuide: true
-    fontFamily: "Input"
+    fontFamily: "Hack"
     autoIndentOnPaste: false
     invisibles: {}
     softWrap: true
@@ -10,6 +9,8 @@
     preferredLineLength: 120
     scrollPastEnd: true
     fontSize: 18
+    softWrapHangingIndent: 2
+    tabType: "soft"
   core:
     ignoredNames: [
       ".bundle"
@@ -27,8 +28,8 @@
     ]
     projectHome: "/Users/jdelsman/go/src/github.com"
     themes: [
-      "atom-dark-ui"
-      "polaris-syntax"
+      "one-light-ui"
+      "github-web"
     ]
   "spell-check":
     grammars: [
