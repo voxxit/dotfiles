@@ -68,19 +68,6 @@
     ]
   welcome:
     showOnStartup: false
-  "release-notes":
-    viewedVersion: "0.89.0"
-  minimap: {}
-  "go-plus":
-    goPath: "~/go"
-    goInstallation: "/usr/local/go/bin/go"
-  linter: {}
-  "atom-lint": {}
-  "merge-conflicts":
-    gitPath: "/usr/local/bin/git"
   "atom-pair":
     pusher_app_key: "2afc34a3ac0f4a7a0eb6"
     pusher_app_secret: "b9db77f83a5db795c0cf"
-  "one-dark-ui":
-    layoutMode: "Compact"
-  "linter-rubocop": {}
