@@ -5,8 +5,9 @@ if [ "$(docker-machine ls -q dev | wc -l)" -eq 0 ]; then
     y|Y)
       rm -rf ~/.docker/machine/cache/boot2docker.iso
       docker-machine create -d virtualbox \
-        --virtualbox-memory "4096" \
+        --virtualbox-memory "8096" \
         --virtualbox-disk-size "60000" \
+        --virtualbox-cpu-count "8" \
         dev
       ;;
   esac
