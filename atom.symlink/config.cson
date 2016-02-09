@@ -1,16 +1,27 @@
 "*":
-  editor:
-    showIndentGuide: true
-    fontFamily: "Input"
-    autoIndentOnPaste: false
-    invisibles: {}
-    softWrap: true
-    softWrapAtPreferredLineLength: true
-    confirmCheckoutHeadRevision: false
-    preferredLineLength: 120
-    scrollPastEnd: true
-    fontSize: 18
+  "atom-lint": {}
+  "atom-material-ui":
+    fonts:
+      fontSize: "Big"
+      useRoboto: true
+      useRobotoInUI: true
+    panels:
+      depth: true
+      panelContrast: true
+    tabs:
+      rippleAccentColor: true
+      tabSize: "Big"
+    treeView:
+      compactTreeView: true
+    ui:
+      slimScrollbar: true
   core:
+    disabledPackages: [
+      "background-tips"
+      "exception-reporting"
+      "metrics"
+    ]
+    hideGitIgnoredFiles: true
     ignoredNames: [
       ".bundle"
       ".git"
@@ -19,17 +30,36 @@
       "tmp"
       "vendor"
     ]
-    hideGitIgnoredFiles: true
-    disabledPackages: [
-      "background-tips"
-      "exception-reporting"
-      "metrics"
-    ]
     projectHome: "/Users/jdelsman/go/src/github.com"
     themes: [
-      "atom-dark-ui"
-      "polaris-syntax"
+      "atom-material-ui"
+      "atom-material-syntax"
     ]
+  editor:
+    autoIndentOnPaste: false
+    confirmCheckoutHeadRevision: false
+    fontFamily: "Input"
+    fontSize: 17
+    invisibles: {}
+    preferredLineLength: 120
+    scrollPastEnd: true
+    showIndentGuide: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+  "go-plus":
+    goInstallation: "/usr/local/go/bin/go"
+    goPath: "~/go"
+  jsonlint:
+    hideOnNoErrors: true
+  linter: {}
+  "linter-rubocop": {}
+  "merge-conflicts":
+    gitPath: "/usr/local/bin/git"
+  minimap: {}
+  "one-dark-ui":
+    layoutMode: "Compact"
+  "release-notes":
+    viewedVersion: "0.89.0"
   "spell-check":
     grammars: [
       "text.plain"
