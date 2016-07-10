@@ -22,9 +22,6 @@
     ui:
       panelContrast: true
       panelShadows: true
-  "atom-pair":
-    pusher_app_key: "2afc34a3ac0f4a7a0eb6"
-    pusher_app_secret: "b9db77f83a5db795c0cf"
   core:
     disabledPackages: [
       "background-tips"

@@ -17,8 +17,12 @@
 # autocomplete both on $PROJECTS, and also assume you want to autocomplete on
 # your Go projects in $GOPATH/src.
 
-if [ ! -z "$1" ] && [ -s "$GOPATH/src/github.com/$1" ]; then
-  cd "$GOPATH/src/github.com/$1"
+if [ ! -z "$1" ]; then
+  if [ -s "$GOPATH/src/gitlab.com/$1" ]; then
+    cd "$GOPATH/src/gitlab.com/$1"
+  elif [ -s "$GOPATH/src/github.com/$1" ]; then
+    cd "$GOPATH/src/github.com/$1"
+  fi
 else
-  cd "$PROJECTS/$1"
+  cd "$HOME/Repositories/$1"
 fi

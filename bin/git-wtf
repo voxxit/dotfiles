@@ -31,7 +31,7 @@ special for it.)
 EOS
 
 USAGE = <<EOS
-Usage: git wtf [branch+] [options]
+USAGE: git wtf [branch+] [options]
 
 If [branch] is not specified, git-wtf will use the current branch. The possible
 [options] are:

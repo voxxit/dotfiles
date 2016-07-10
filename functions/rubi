@@ -1,7 +1,7 @@
 # Usage: rubi <ruby version>
 #
 # Description: after downloading the latest ruby versions file,
-#   installs ruby with 4 processors without docs; defaults to latest stable
+#   installs ruby with 8 processors without docs; defaults to latest stable
 #
 rubi () {
   local version=$1
@@ -10,7 +10,7 @@ rubi () {
   if (( $+commands[gnproc] )); then
     local procs=$(gnproc)
   else
-    local procs=4 # just to be safe
+    local procs=8 # just to be safe
   fi
 
   wget -qN \

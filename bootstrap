@@ -113,21 +113,24 @@ link_file () {
 }
 
 install_homebrew () {
-  command -v brew &>/dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  if [ "$(uname -s)" == "Darwin" ]; then
+    command -v brew &>/dev/null || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
 }
 
 install_zsh () {
-  command -v zsh &>/dev/null || brew install zsh
+  if [ "$(uname -s)" == "Darwin" ]; then
+    command -v zsh &>/dev/null || brew install zsh
+  else
+    command -v zsh &>/dev/null || sudo pacman -Syyu zsh
+  fi
 }
 
 install_gems () {
   [ ! command -v gem &>/dev/null ] && (echo "Ruby is not installed" && exit 1)
 
   if ! command -v bundle &>/dev/null; then
-    export GEM_HOME=~/.gems
-    export GEM_PATH=$GEM_HOME
-    export GEM_CACHE=$GEM_HOME/cache
-    export PATH=$PATH:$GEM_HOME/bin
+    export PATH=$PATH:~/.gem/ruby/2.2.0/bin
 
     gem install bundler --no-document
   fi
@@ -138,7 +141,11 @@ install_gems () {
 }
 
 install_deps () {
-  brew install `find -H ${DOTFILES_ROOT} -maxdepth 2 -name '_depends' | xargs cat | sort | uniq`
+  if [ "$(uname -s)" == "Darwin" ]; then
+    brew install `find -H ${DOTFILES_ROOT} -maxdepth 2 -name '_depends' | xargs cat | sort | uniq`
+  else
+    sudo pacman -Syyu `find -H ${DOTFILES_ROOT} -maxdepth 2 -name '_depends' | xargs cat | sort | uniq`
+  fi
 }
 
 install_dotfiles () {
@@ -152,9 +159,12 @@ install_dotfiles () {
   done
 }
 
-install_homebrew   # required
-install_zsh        # required
-install_gems       # required
-install_deps       # required
+if [ "$(uname -s)" == "Darwin" ]; then
+  install_homebrew   # required
+  install_zsh        # required
+  install_deps       # required
+fi
+
+install_gems
 setup_gitconfig
 install_dotfiles

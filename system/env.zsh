@@ -3,4 +3,9 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 export ARCHFLAGS="-arch $(uname -m)"
-export MAKEFLAGS="-j$(gnproc)"
+
+if [ $(uname -s) = "Darwin" ]; then
+  export MAKEFLAGS="-j$(gnproc)"
+else 
+  export MAKEFLAGS="-j$(nproc)"
+fi

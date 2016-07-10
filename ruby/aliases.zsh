@@ -1,12 +1,6 @@
-alias be="bundle exec"
-
-function deploy() {
-  local deployto=$1
-  local migrate=$2
-
-  if [ -z $migrate ]; then
-    bundle exec rake "zero_downtime_deploy[$deployto]"
-  else
-    bundle exec rake "zero_downtime_deploy[$deployto,migrate_db]"
-  fi
-}
+alias b="bundle"
+alias bi="b install --path vendor"
+alias bil="bi --local"
+alias bu="b update"
+alias be="b exec"
+alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
