@@ -33,3 +33,6 @@ unset config_files
 if [[ -a ~/.localrc ]]; then
   source ~/.localrc
 fi
+
+export NVM_DIR="/Users/jdelsman/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

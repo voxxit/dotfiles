@@ -2,16 +2,8 @@
   "atom-lint": {}
   "atom-material-ui":
     colors:
-      abaseColor:
-        red: 255
-        green: 167
-        blue: 38
-        alpha: 1
-      accentColor:
-        red: 159
-        green: 105
-        blue: 24
-        alpha: 1
+      abaseColor: "#ffa726"
+      accentColor: "#9f6918"
       genAccent: true
       predefinedColor: "Orange"
     fonts: {}
@@ -38,6 +30,7 @@
       "vendor"
     ]
     projectHome: "/Users/jdelsman/go/src/github.com"
+    telemetryConsent: "no"
     themes: [
       "atom-material-ui"
       "atom-dark-syntax"
@@ -46,7 +39,6 @@
     autoIndentOnPaste: false
     confirmCheckoutHeadRevision: false
     fontFamily: "Input"
-    fontSize: 15
     invisibles: {}
     preferredLineLength: 120
     scrollPastEnd: true

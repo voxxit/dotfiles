@@ -17,5 +17,5 @@ rubi () {
     --directory-prefix=/usr/local/share/ruby-install/ruby/ \
     $update_url/ruby/{{versions,stable}.txt,checksums.{md5,sha1,sha256,sha512}}
 
-  ruby-install -j$procs --no-reinstall ruby $version -- --disable-install-rdoc
+  ruby-install -j$procs --no-reinstall ruby $version -- --disable-install-rdoc --with-readline-dir=$(brew --prefix readline)
 }
