@@ -19,6 +19,16 @@
       "background-tips"
       "exception-reporting"
       "metrics"
+      "gofmt"
+      "tester-go"
+      "builder-go"
+      "autocomplete-go"
+      "godoc"
+      "gorename"
+      "navigator-go"
+      "go-get"
+      "go-config"
+      "gometalinter-linter"
     ]
     hideGitIgnoredFiles: true
     ignoredNames: [
