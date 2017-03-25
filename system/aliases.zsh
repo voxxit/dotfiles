@@ -8,6 +8,7 @@ if [ $(uname -s) = "Darwin" ]; then
   alias la='gls -A --color'
 fi
 
+alias tree="tree -C"
 alias t="tree"
 
 # find all instances broadcasting ssh over avahi

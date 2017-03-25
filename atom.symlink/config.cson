@@ -60,8 +60,9 @@
     goPath: "~/go"
   jsonlint:
     hideOnNoErrors: true
-  linter:
-    showErrorPanel: false
+  linter: {}
+  "linter-codeclimate":
+    init: false
   "linter-rubocop": {}
   "merge-conflicts":
     gitPath: "/usr/local/bin/git"
