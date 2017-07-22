@@ -141,7 +141,7 @@ install_dotfiles () {
   done
 }
 
-install_homebrew
+#install_homebrew
 install_gems
 setup_gitconfig
 install_dotfiles

@@ -11,5 +11,5 @@ atom.workspace.observeTextEditors (editor) ->
   editor.onDidSave ->
     console.log "Saved! #{editor.getPath()}"
 
-  if path.extname(editor.getPath()) is '.md'
+  if path.extname("#{editor.getPath()}") is '.md'
     editor.setSoftWrap(true)
