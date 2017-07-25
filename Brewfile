@@ -82,12 +82,12 @@ brew 'zsh'
 
 cask '1password'
 cask 'alfred'
-cask 'atom'
+cask 'atom-beta'
 cask 'audio-hijack'
 cask 'calibre'
 cask 'chefdk'
 cask 'cleanmymac'
-cask 'docker'
+cask 'caskroom/versions/docker-edge'
 cask 'dropbox'
 cask 'firefox'
 cask 'fission'
@@ -149,9 +149,6 @@ brew 'git'
 brew 'hub'
 brew 'git-flow'
 brew 'git-utils'
-
-# atom
-cask 'atom'
 
 # dropbox
 cask 'dropbox'
