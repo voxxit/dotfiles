@@ -99,6 +99,7 @@ cask 'istat-menus'
 cask 'iterm2'
 cask 'keybase'
 cask 'knox'
+cask 'mysqlworkbench'
 cask 'nicecast'
 cask 'obs'
 cask 'popkey'
@@ -166,12 +167,10 @@ brew 'heroku-toolbelt'
 
 mas 'Airmail 3', id: 918858936
 mas 'iA Writer', id: 775737590
-mas 'iTranslate', id: 884952790
 mas 'LINE', id: 539883307
 mas 'Logic Pro X', id: 634148309
 mas 'Pixelmator', id: 407963104
 mas 'Todoist', id: 585829637
 mas 'Tweetbot', id: 557168941
 mas 'Webcam Settings', id: 533696630
-mas 'WeChat', id: 836500024
-mas 'Boom 2', id: 948176063
+mas 'BetterSnapTool', id: 417375580
