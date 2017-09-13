@@ -1,106 +1,106 @@
-tap 'caskroom/cask'
-tap 'homebrew/services'
-tap 'homebrew/versions'
+tap "caskroom/cask"
+tap "homebrew/services"
+tap "homebrew/versions"
 
-cask 'java'
+cask "java"
 
-brew 'openssl'
-brew 'git'
-brew 'readline'
-brew 'python'
-brew 'awscli'
-brew 'bats'
-brew 'bfg'
-brew 'caddy'
-brew 'chruby'
-#brew 'coreutils'
-brew 'csshx'
-brew 'ctop'
-brew 'findutils'
-brew 'diff-so-fancy'
-brew 'git-flow'
-brew 'git-utils'
-brew 'go'
-brew 'xz'
-brew 'python3'
-brew 'grc'
-brew 'htop-osx'
-brew 'httpie'
-brew 'hub'
-brew 'hyper'
-brew 'iperf3'
-brew 'jq'
-brew 'lz4'
-brew 'lzo'
-brew 'lzop'
-brew 'm-cli'
-brew 'mtr'
-#brew 'p7zip'
-brew 'parallel'
-#brew 'percona-toolkit'
-brew 'pigz'
-brew 'pwgen'
-brew 'rclone'
-brew 'socat'
-brew 'ssh-copy-id'
-brew 'the_silver_searcher'
-#brew 'tmate'
-#brew 'tmux'
-brew 'tree'
-#brew 'vim'
-#brew 'watch'
-brew 'wget'
-#brew 'yarn'
-#brew 'zsh'
+brew "openssl"
+brew "git"
+brew "readline"
+brew "python"
+brew "awscli"
+brew "bats"
+brew "bfg"
+brew "caddy"
+brew "chruby"
+#brew "coreutils"
+brew "csshx"
+brew "ctop"
+brew "findutils"
+brew "diff-so-fancy"
+brew "git-flow"
+brew "git-utils"
+brew "go"
+brew "xz"
+brew "python3"
+brew "grc"
+brew "htop-osx"
+brew "httpie"
+brew "hub"
+brew "hyper"
+brew "iperf3"
+brew "jq"
+brew "lz4"
+brew "lzo"
+brew "lzop"
+brew "m-cli"
+brew "mtr"
+#brew "p7zip"
+brew "parallel"
+#brew "percona-toolkit"
+brew "pigz"
+brew "pwgen"
+brew "rclone"
+brew "socat"
+brew "ssh-copy-id"
+brew "the_silver_searcher"
+#brew "tmate"
+#brew "tmux"
+brew "tree"
+#brew "vim"
+#brew "watch"
+brew "wget"
+#brew "yarn"
+#brew "zsh"
 
-cask '1password'
-cask 'alfred'
-cask 'atom-beta'
-cask 'audio-hijack'
-cask 'calibre'
-#cask 'chefdk'
-cask 'cleanmymac'
-cask 'caskroom/versions/docker-edge'
-cask 'dropbox'
-cask 'firefox'
-cask 'fission'
-cask 'github-desktop'
-cask 'google-chrome'
-cask 'google-cloud-sdk'
-cask 'gpgtools'
-cask 'istat-menus'
-cask 'iterm2'
-cask 'keybase'
-cask 'knox'
-cask 'little-snitch'
-cask 'mysqlworkbench'
-cask 'nicecast'
-cask 'obs'
-cask 'popkey'
-cask 'qq'
-cask 'rekordbox'
-cask 'screenhero'
-cask 'skype'
-cask 'slack'
-cask 'sourcetree'
-cask 'spotify'
-cask 'textual'
-cask 'torbrowser'
-cask 'tunnelblick'
-cask 'unrarx'
-cask 'virtualbox'
-cask 'vlc'
-cask 'vnc-viewer'
-cask 'zerotier-one'
-cask 'zoomus'
+cask "1password"
+cask "alfred"
+cask "atom-beta"
+cask "audio-hijack"
+cask "calibre"
+#cask "chefdk"
+cask "cleanmymac"
+cask "caskroom/versions/docker-edge"
+cask "dropbox"
+cask "firefox"
+cask "fission"
+cask "github-desktop"
+cask "google-chrome"
+cask "google-cloud-sdk"
+cask "gpgtools"
+cask "istat-menus"
+cask "iterm2"
+cask "keybase"
+cask "knox"
+cask "little-snitch"
+cask "mysqlworkbench"
+cask "nicecast"
+cask "obs"
+cask "popkey"
+cask "qq"
+cask "rekordbox"
+cask "screenhero"
+cask "skype"
+cask "slack"
+cask "sourcetree"
+cask "spotify"
+cask "textual"
+cask "torbrowser"
+cask "tunnelblick"
+cask "unrarx"
+cask "virtualbox"
+cask "vlc"
+cask "vnc-viewer"
+cask "zerotier-one"
+cask "zoomus"
 
-mas 'Airmail 3', id: 918858936
-mas 'iA Writer', id: 775737590
-mas 'LINE', id: 539883307
-mas 'Logic Pro X', id: 634148309
-mas 'Pixelmator', id: 407963104
-mas 'Todoist', id: 585829637
-mas 'Tweetbot', id: 557168941
-mas 'Webcam Settings', id: 533696630
-mas 'BetterSnapTool', id: 417375580
-mas 'Clear – Tasks, Reminders & To-Do Lists', id: 504544917
+mas "Airmail 3", id: 918858936
+mas "iA Writer", id: 775737590
+mas "LINE", id: 539883307
+mas "Logic Pro X", id: 634148309
+mas "Pixelmator", id: 407963104
+mas "Todoist", id: 585829637
+mas "Tweetbot", id: 557168941
+mas "Webcam Settings", id: 533696630
+mas "BetterSnapTool", id: 417375580
+mas "Clear – Tasks, Reminders & To-Do Lists", id: 504544917
