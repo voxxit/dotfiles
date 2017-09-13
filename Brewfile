@@ -94,52 +94,6 @@ cask 'vnc-viewer'
 cask 'zerotier-one'
 cask 'zoomus'
 
-# --------------
-
-# base
-brew 'zsh'
-brew 'coreutils'
-brew 'findutils'
-
-# ruby
-brew 'chruby'
-brew 'ruby-install'
-brew 'readline'
-
-# vim
-brew 'vim'
-
-# system
-brew 'tree'
-brew 'grc'
-brew 'wget'
-brew 'spark'
-brew 'tmux'
-brew 'jq'
-
-# nodejs
-brew 'nodejs'
-
-# git
-brew 'git'
-brew 'hub'
-brew 'git-flow'
-brew 'git-utils'
-
-# dropbox
-cask 'dropbox'
-
-# iterm
-cask 'iterm2'
-
-# AWS
-brew 'awscli'
-brew 'ec2-api-tools'
-brew 'packer'
-
-# Heroku
-brew 'heroku-toolbelt'
-
 mas 'Airmail 3', id: 918858936
 mas 'iA Writer', id: 775737590
 mas 'LINE', id: 539883307
