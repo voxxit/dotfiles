@@ -10,5 +10,25 @@ git_prompt_info() {
   fi
 }
 
+kube_ns() {
+  local current_ns="$(kubectl config get-contexts | grep \* | awk '{ print $5 }')"
+  
+  if [ -n $current_ns ]; then
+    echo "%{$fg_no_bold[red]%}⎈ $current_ns%{$reset_color%}"
+  fi
+}
+
+kube_context() {
+  local current_context="$(kubectl config current-context)"
+  
+  if [ -n $current_context ]; then
+    echo "%{$fg_bold[red]%}$current_context%{$reset_color%}"
+  fi
+}
+
 setopt promptsubst
-export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
+autoload -Uz promptinit
+promptinit
+prompt fade red
+
+export RPROMPT="$(kube_context)$(kube_ns)"

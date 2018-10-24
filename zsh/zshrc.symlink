@@ -35,3 +35,4 @@ if [[ -a ~/.localrc ]]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+. "/Users/jdelsman/.acme.sh/acme.sh.env"
