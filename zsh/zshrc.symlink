@@ -1,5 +1,5 @@
 export ZSH=~/.files
-export PROJECTS=~/Repositories
+export PROJECTS=${HOME}/go/src
 
 # zsh configuration files
 typeset -U config_files
@@ -15,6 +15,10 @@ for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
   source $file
 done
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
@@ -35,4 +39,17 @@ if [[ -a ~/.localrc ]]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-. "/Users/jdelsman/.acme.sh/acme.sh.env"
+. "/Users/joshdelsman/.acme.sh/acme.sh.env"
+
+fpath=($fpath ~/.zsh/completion)
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#zprof

@@ -12,7 +12,6 @@ git_prompt_info() {
 
 kube_ns() {
   local current_ns="$(kubectl config get-contexts | grep \* | awk '{ print $5 }')"
-  
   if [ -n $current_ns ]; then
     echo "%{$fg_no_bold[red]%}⎈ $current_ns%{$reset_color%}"
   fi
@@ -29,6 +28,6 @@ kube_context() {
 setopt promptsubst
 autoload -Uz promptinit
 promptinit
-prompt fade red
+prompt redhat
 
-export RPROMPT="$(kube_context)$(kube_ns)"
+#export RPROMPT="$(kube_context)$(kube_ns)"
