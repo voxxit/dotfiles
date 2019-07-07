@@ -1,55 +1,137 @@
-export ZSH=~/.files
-export PROJECTS=${HOME}/go/src
+source $(brew --prefix)/share/antigen/antigen.zsh
 
-# zsh configuration files
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+antigen use oh-my-zsh
 
-# load path files
-for file in ${(M)config_files:#*/path.zsh}; do
-  source $file
-done
+antigen bundle editor
+antigen bundle history
+antigen bundle prompt
+antigen bundle utility
+antigen bundle completion
 
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
-  source $file
-done
+antigen bundle aws
+antigen bundle brew
+antigen bundle bundler
+# antigen bundle common-aliases
+antigen bundle docker
+antigen bundle encode64
+antigen bundle gem
+antigen bundle git
+antigen bundle git-flow
+antigen bundle npm
+antigen bundle osx
+antigen bundle rails
+antigen bundle ruby
+antigen bundle tmux
+antigen bundle vscode
+antigen bundle z
 
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
 
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
+antigen bundle postmodern/chruby share/chruby/chruby.sh
+antigen bundle postmodern/chruby share/chruby/auto.sh
 
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
+antigen apply
 
-unset config_files
+#####################
 
-# Stash environment variables in ~/.localrc. This means they'll stay out
-# of the main dotfiles repo (which may be public)
-if [[ -a ~/.localrc ]]; then
-  source ~/.localrc
-fi
+export GOPATH="${HOME}/go"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-. "/Users/joshdelsman/.acme.sh/acme.sh.env"
-
+fpath=(${HOME}/.files/functions $fpath)
 fpath=($fpath ~/.zsh/completion)
+autoload -U ${HOME}/.files/functions/*(:t)
+
+[ -e ~/.iterm2_shell_integration.zsh ] && . ~/.iterm2_shell_integration.zsh
+[ -f ~/.fzf.zsh ] && . ~/.fzf.zsh
+[ -f ~/.localrc ] && . ~/.localrc
+
+#####################
+
+# Prompt symbol
+COMMON_PROMPT_SYMBOL="❯"
+
+# Left Prompt
+ PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'
+
+# Right Prompt
+ RPROMPT='$(common_git_status)'
+
+# Prompt with current SHA
+# PROMPT='$(common_host)$(common_current_dir)$(common_bg_jobs)$(common_return_status)'
+# RPROMPT='$(common_git_status) $(git_prompt_short_sha)'
+
+# Host
+common_host() {
+  if [[ -n $SSH_CONNECTION ]]; then
+    me="%n@%m"
+  elif [[ $LOGNAME != $USER ]]; then
+    me="%n"
+  fi
+  if [[ -n $me ]]; then
+    echo "%{$fg[green]%}$me%{$reset_color%}:"
+  fi
+  if [[ $AWS_VAULT ]]; then
+    echo "%{$fg[yellow]%}$AWS_VAULT%{$reset_color%} "
+  fi
+}
+
+# Current directory
+common_current_dir() {
+  echo -n "%{$fg[blue]%}%c "
+}
+
+# Prompt symbol
+common_return_status() {
+  echo -n "%(?.%F{magenta}.%F{red})$COMMON_PROMPT_SYMBOL%f "
+}
+
+# Git status
+common_git_status() {
+    local message=""
+    local message_color="%F{green}"
+
+    local staged=$(git status --porcelain 2>/dev/null | grep -e "^M " -e "^A ")
+    local unstaged=$(git status --porcelain 2>/dev/null | grep -e "^ M" -e "^??")
+
+    if [[ -n ${staged} ]]; then
+        message_color="%F{red}"
+    elif [[ -n ${unstaged} ]]; then
+        message_color="%F{yellow}"
+    fi
+
+    local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [[ -n ${branch} ]]; then
+        message+="${message_color}${branch}%f"
+    fi
+
+    echo -n "${message}"
+}
+
+# Git prompt SHA
+ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{%F{green}%}"
+ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%} "
+
+# Background Jobs
+common_bg_jobs() {
+  bg_status="%{$fg[yellow]%}%(1j.↓%j .)"
+  echo -n $bg_status
+}
+export PATH="/usr/local/sbin:$PATH"
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-
+[[ -f /Users/joshdelsman/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/joshdelsman/.config/yarn/global/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+[[ -f /Users/joshdelsman/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/joshdelsman/.config/yarn/global/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/joshdelsman/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/joshdelsman/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-#zprof
+alias ktoken='kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep eks-admin | awk '\''{print $1}'\'')| grep token: | awk '\''{ print $2 }'\'' | pbcopy'
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/mc mc
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
